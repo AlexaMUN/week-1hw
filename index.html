@@ -3,27 +3,33 @@
     <meta charset="utf-8">
     <title>Mocha Tests</title>
     <link href="lib/mocha.css" rel="stylesheet" />
+    <link href="styling.css" rel="stylesheet" />
 </head>
 <body>
 
 
   <!-- 👍 YOUR HTML HERE 👍 -->
-
-
-
+  
+  <div class="page">
+  <div>
+      <span><img id="inn" src="/home/eualexam/codaisseur/week-1hw/img/inn.jpg" onclick = 'rest(hero)'/></span>
+      <span><img id="dagger" style="height: 260px;" src="/home/eualexam/codaisseur/week-1hw/img/dagger.jpg" onclick = 'pickUpItem(hero, dagger)'/></span>
+      <span><img id="bag" style="height: 260px;" src="/home/eualexam/codaisseur/week-1hw/img/bag.jpg" onclick='equipWeapon(hero)'/></span>
+    
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
-  <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
-
-  <div id="mocha">
-  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+  <div class="mochaBox">
+    <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
+    <div id="mocha">
+    <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    </div>
   </div>
-
   <script src="lib/chai.js"></script>
   <script src="lib/mocha.js"></script>
   <script src="lib/sinon.js"></script>
   <script>mocha.setup('bdd')</script>
   <script src="YOUR_JAVASCRIPT_HERE.js"></script>
   <script src="lib/game_logic.test.js"></script>
-
+</div>
+</div>
 </body>
 </html>
