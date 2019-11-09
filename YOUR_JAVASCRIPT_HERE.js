@@ -31,16 +31,12 @@ function rest(person)
 
 }
 
-
-
 function pickUpItem(person, weapon)
 {
     person.inventory.push(weapon);
 
     return person;
 }
-
-
 function equipWeapon(person)
 {
     if (person.inventory.length == 0 || person.inventory[0] == person.weapon)
@@ -52,14 +48,29 @@ function equipWeapon(person)
 
     return person;
 }
-// function displayStats(person){
 
-// prompt ("Name " + person.name;
-// var currentHealth = "Your current health level is " + person.health;
-// var currentWeapon = "Your current weapon is " + person.weapon;
-// var currentWeaponDamage = "Your current weapon damage level is " + person.weapon.damage;}
+function checkBox(person)
+{
+    document.getElementById("checkBox").innerHTML = 'Your name is ' + hero.name;
+    document.getElementById("checkBox").innerHTML += "Your health score is " + person.health + '<br />';
+    document.getElementById("checkBox").innerHTML += "You've picked up a weapon called " + person.weapon.type + " with a damage score of " + person.weapon.damage + '<br />';
+    document.getElementById("checkBox").innerHTML += 'In your inventory is:<br />'
+    hero.inventory.forEach(function(item){
+        document.getElementById("checkBox").innerHTML += 'a ' + item.type + ' with ' + item.damage + ' damage <br />'; 
+    });      
+}
 
+document.getElementById('bag').onclick = function(){
+    equipWeapon(hero);
+    checkBox(hero);
+};
 
-// prompt("Your current stats are", displayStats(hero));
+document.getElementById('inn').onclick = function(){
+    rest(hero);
+    checkBox(hero);
+};
 
-window.alert("Name " + hero.name);
+document.getElementById('dagger').onclick = function(){
+    pickUpItem(hero, dagger);
+    checkBox(hero);
+};

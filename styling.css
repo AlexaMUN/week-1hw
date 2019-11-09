@@ -4,14 +4,14 @@ div.page {
     height: 100%; 
     text-align: center;
 }
-/* div.eventBox {
+ div.checkBoxy {
     position: relative;
     margin: 0 auto;
     padding: 5px 0px 5px 0px;
     width: 500px;
     height: 300px;
-    border: 1px solid black; */
-
+    border: 10px solid green; 
+ } 
 
 span {
     display: inline-block;
