@@ -1,5 +1,5 @@
 var hero = {
-    name: '',
+    name: 'Alexa',
     inventory: Array(),
     health: 10,
     weapon: {
@@ -13,9 +13,6 @@ var dagger = {
     type: 'dagger',
     damage: 2
 };
-
-var name = prompt("Please enter your name", "PlayerOne");
-alert("Your name is now " + name);
 
 function rest(person)
 {
@@ -49,28 +46,25 @@ function equipWeapon(person)
     return person;
 }
 
-function checkBox(person)
-{
-    document.getElementById("checkBox").innerHTML = 'Your name is ' + hero.name;
-    document.getElementById("checkBox").innerHTML += "Your health score is " + person.health + '<br />';
-    document.getElementById("checkBox").innerHTML += "You've picked up a weapon called " + person.weapon.type + " with a damage score of " + person.weapon.damage + '<br />';
-    document.getElementById("checkBox").innerHTML += 'In your inventory is:<br />'
-    hero.inventory.forEach(function(item){
-        document.getElementById("checkBox").innerHTML += 'a ' + item.type + ' with ' + item.damage + ' damage <br />'; 
-    });      
-}
+// function checkBox(person)
+// {
+//     document.getElementById("checkBox").innerHTML = "Your name is " + person.name + "." + '<br />';
+//     document.getElementById("checkBox").innerHTML += "Your health score is " + person.health + "." + '<br />';
+//     document.getElementById("checkBox").innerHTML += "You've picked up a weapon called " + person.weapon.type + " with a damage score of " + person.weapon.damage + "." + '<br />';
+//     document.getElementById("checkBox").innerHTML += "Your inventory consists of a weapon called " + person.weapon.type + " with damage score " + person.weapon.damage + "."; 
+//     }
 
 document.getElementById('bag').onclick = function(){
     equipWeapon(hero);
-    checkBox(hero);
+    //checkBox(hero);
 };
 
 document.getElementById('inn').onclick = function(){
     rest(hero);
-    checkBox(hero);
+    //checkBox(hero);
 };
 
 document.getElementById('dagger').onclick = function(){
     pickUpItem(hero, dagger);
-    checkBox(hero);
+    //checkBox(hero);
 };
